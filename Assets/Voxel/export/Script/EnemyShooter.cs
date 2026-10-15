@@ -20,16 +20,6 @@ public class EnemyShooter : MonoBehaviour
         lastFireTime = Time.time;
     }
 
-    void Shoot()
-    {
-        Vector3 target = player.position + Vector3.up * 1f;
-        Vector3 dir = (target - firePoint.position).normalized;
-
-        GameObject bullet = Instantiate(bulletPrefab,
-            firePoint.position, Quaternion.LookRotation(dir));
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.linearVelocity = dir * bulletSpeed;
-    }
 
     void Update()
     {
@@ -53,6 +43,17 @@ public class EnemyShooter : MonoBehaviour
             lastFireTime = Time.time;
             Shoot();
         }
+    }
+
+    void Shoot()
+    {
+        Vector3 target = player.position + Vector3.up * 1f;
+        Vector3 dir = (target - firePoint.position).normalized;
+
+        GameObject bullet = Instantiate(bulletPrefab,
+            firePoint.position, Quaternion.LookRotation(dir));
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.linearVelocity = dir * bulletSpeed;
     }
 }
 
