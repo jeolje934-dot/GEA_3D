@@ -19,16 +19,11 @@ public class RewardCalc : MonoBehaviour
 
         int playHour = playSeconds / 3600;
         int playMinutes = (playSeconds - 3600) / 60;
-
-
-
-
         int playSecond = playSeconds%60;
         Debug.Log("플레이 시간 " + playHour + "시" + playMinutes + "분" + playSecond + "초");
 
 
         
-
 
 
 

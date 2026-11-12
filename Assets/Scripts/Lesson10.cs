@@ -1,0 +1,96 @@
+using UnityEngine;
+
+public class Lesson10 : MonoBehaviour
+{
+    [ContextMenu("예측 1")]
+    void Predict1()
+    {
+        int hp = 0;
+        bool hasShield = true;
+        bool isDead = hp <= 0;
+        Debug.Log(isDead);
+        Debug.Log(isDead && !hasShield);
+        Debug.Log(isDead || hasShield);
+        Debug.Log(!(hp > 0) == isDead);
+    }
+
+    [ContextMenu("쇼트 서킷")]
+    void ShortCircuit()
+    {
+        int total = 100;
+        int count = 0;
+        if (count != 0 && total / count > 5)
+        {
+            Debug.Log("평균 5초과");
+        }
+        if (count == 0 || total / count > 5)
+        {
+            Debug.Log("통과");
+        }
+        bool wrong = total / count > 5 && count != 0;
+    }
+
+    // 조건 만들기
+    [ContextMenu("판단")]
+    void Judge()
+    {
+        int hp = 20;
+        int maxHp = 100;
+        bool isStunned = false;
+        bool hasPoison = false;
+
+        bool canAttack = hp > 0 && !isStunned;
+        bool isDanger = hp <= maxHp / 4 || hasPoison;
+        Debug.Log(canAttack);
+        Debug.Log(isDanger);
+    }
+    // if 와 else 
+    // 괄호 안 조건이 true면 if 블록 , false 면 else 블록을 실행 
+    [ContextMenu("if else")]
+    void ifElse()
+    {
+        int hp = 3;
+        if (hp <= 0)
+        {
+            Debug.Log("사망");
+
+        }
+        else
+        {
+            Debug.Log("생존");
+        }
+    }
+    // else if 조건 검사 순서
+    [ContextMenu("체력 상태")]
+    void HpState()
+    {
+        int hp = 5;
+        int maxHp = 10;
+        float ratio = (float)hp / maxHp;
+        if (ratio >= 0.7f)
+        {
+            Debug.Log("양호");
+        }
+        else if (ratio >= 0.3f)
+        {
+            Debug.Log("주의");
+        }
+        else
+        {
+            Debug.Log("위험");
+        }
+
+        [ContextMenu("삼항")]
+        void Ternary()
+        {
+            int hp = 0;
+            string state = hp > 0 ? "생존" : "사망";
+            Debug.Log(state);
+        }
+
+        int damage = -3;
+        int finalDamage = damage < 1 ? 1 : damage;
+        Debug.Log(finalDamage);
+
+    }
+}
