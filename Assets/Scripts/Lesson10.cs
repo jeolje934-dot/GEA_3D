@@ -80,17 +80,6 @@ public class Lesson10 : MonoBehaviour
             Debug.Log("À§Çè");
         }
 
-        [ContextMenu("»ïÇ×")]
-        void Ternary()
-        {
-            int hp = 0;
-            string state = hp > 0 ? "»ýÁ¸" : "»ç¸Á";
-            Debug.Log(state);
-        }
-
-        int damage = -3;
-        int finalDamage = damage < 1 ? 1 : damage;
-        Debug.Log(finalDamage);
-
+       
     }
 }
