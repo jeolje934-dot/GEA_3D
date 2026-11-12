@@ -16,7 +16,7 @@ public class LevelSystem : MonoBehaviour
             {
                 int killcount = expPerKill - i;
 
-                int eXPerkill = row;
+                int exPerKill = row;
             }
         }
 
